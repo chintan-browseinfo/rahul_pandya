@@ -23,7 +23,7 @@
             <field name="name">student.student.form</field>
             <field name="model">student.student</field>
             <field name="arch" type="xml">
-                <form string="Student" class="o_sale_order">
+                <form string="Student" class="o_sale_order" >
                 <sheet>
                         <group>
                             <field name="name"/>
@@ -31,7 +31,6 @@
                             <field name="address"/>
                             <field name="city"/>
                         </group>
-                    
                         <group>
                         	<field name="dob"/>
                             <field name="age" />
@@ -67,7 +66,6 @@
                         <field name="per"/>
                         <field name="application"/>
                        	<field name="language"/>
-                 
                         </tree>
                 </field>
             </record>
@@ -115,10 +113,10 @@
             <menuitem id="main_menu" name="Job Portal" sequence="3"/>
             <menuitem id="sub_menu" name="Application" sequence="4" parent="main_menu"/>
             
-            <menuitem action="action_personal"id="menu_student_module" parent="sub_menu"name="Application"sequence="13" />
+            <menuitem action="action_personal" id="menu_student_module1" parent="sub_menu" name="Personal" sequence="13" />
             
-            <menuitem action="action_academic"id="menu_student_module" parent="sub_menu"
-            name="Apply"sequence="15" />
+            <menuitem action="action_academic" id="menu_student_module2" parent="sub_menu"
+            name="Academic" sequence="15" />
 
     </data>
 </odoo>

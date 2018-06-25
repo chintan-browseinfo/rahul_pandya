@@ -12,8 +12,9 @@ class studentstudent(models.Model):
     dob = fields.Date(string="D.O.B", required=True)
     age = fields.Integer(string="Age", required=True)
     gender = fields.Selection([('m','Male'),('f','Femele')],string="Gender", required=True)  
-    Location = fields.Many2one('res.partner', String="Location")
-    
+    Location = fields.Many2one('student.job', String="Location")
+    job_id= fields.One2many('student.job', 'company_id',String="Job Id")
+	
 class studentjob(models.Model):
     _name = "student.job"
     _description = "Jobportal"
@@ -24,6 +25,6 @@ class studentjob(models.Model):
     application = fields.Selection([('d','Devloper'),('pm','Project Manager'),('tl','Team Leader'),                                     
                                         ('tr','Trainee')],string="Apply For",required=True)
     language = fields.Selection([('o','Odoo'),('p','Python'),('x','XML'),('j','Java')],string="Interested In",required=True)
-    company_id = fields.Many2one('student.student', String="company")
+    company_id = fields.One2many('student.student', String="company")
     
     
