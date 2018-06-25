@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+           <record id="view_student_module_tree" model="ir.ui.view">
+                <field name="name">student.student.tree</field>
+                <field name="model">student.student</field>
+                <field name="priority">2</field>
+                <field name="arch" type="xml">
+                        <tree string="student">
+                            <field name="name"/>
+                            <field name="lastname"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                            <field name="dob"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </tree>
+                </field>
+            </record>
+            
+           <record id="view_sample_module_form" model="ir.ui.view">
+            <field name="name">student.student.form</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <form string="Student" class="o_sale_order">
+                <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="lastname"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                        </group>
+                    
+                        <group>
+                        	<field name="dob"/>
+                            <field name="age" />
+                            <field name="gender"/>
+                        </group>  
+                </sheet>
+                </form>
+            </field>
+        </record>
+                
+            <record id="action_personal" model="ir.actions.act_window">
+            <field name="name">Personal Detail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p><p>
+                </p>
+            </field>
+            </record>
+
+            
+            <record id="view_student_module_tree" model="ir.ui.view">
+                <field name="name">student.student.tree</field>
+                <field name="model">student.job</field>
+                <field name="priority">5</field>
+                <field name="arch" type="xml">
+                        <tree string="student">
+                        <field name="degree"/>
+                        <field name="year"/>
+                        <field name="per"/>
+                        <field name="application"/>
+                       	<field name="language"/>
+                 
+                        </tree>
+                </field>
+            </record>
+            <record id="view_sample_module_form" model="ir.ui.view">
+            <field name="name">student.student.form</field>
+            <field name="model">student.job</field>
+            <field name="arch" type="xml">
+                <form string="Student" class="o_sale_order">
+                <sheet>
+                       <group>
+                        	<field name="degree"/>
+                        </group>
+                        <group>
+                        	<field name="year"/>
+                        </group>
+                        <group>
+                            <field name="per"/>
+                        </group>
+                        <group>
+                        	<field name="application"/>
+                        </group>
+                  
+                        <group>
+                        	<field name="language"/>
+                        </group>
+                </sheet>
+
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_academic" model="ir.actions.act_window">
+            <field name="name">Academic Detail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.job</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p><p>
+                </p>
+            </field>
+        </record>
+            
+            <menuitem id="main_menu" name="Job Portal" sequence="3"/>
+            <menuitem id="sub_menu" name="Application" sequence="4" parent="main_menu"/>
+            
+            <menuitem action="action_personal"id="menu_student_module" parent="sub_menu"name="Application"sequence="13" />
+            
+            <menuitem action="action_academic"id="menu_student_module" parent="sub_menu"
+            name="Apply"sequence="15" />
+
+    </data>
+</odoo>
